@@ -14,16 +14,17 @@ In addition to returning the presence value for each kinetic it will return the 
 Use the kinetics of your PTK measurement to select well expressed peptides for further by selecting peptides that show a positive trend during the incubation. Each kinetic curve receives a score that can be used to determine if a clear positive trend is present. In addition it calculates for each peptide in what percentage of the samples or arrays measured such a clear positive trend is observed. Visualizations of the results are implemented to assist the user in selecting well expressed peptides for further analysis.
 The application consists of a data input, a workflow and a data output. 
 
-The input data is the [ptk dataset](https://tercen.com/r/35c33fa33c9e6aba0dce6483f5f70135)
+The input data is the [ptk dataset](https://tercen.com/r/46842dc092dac0594fe844174fbb72c8)
 
-This workflow has 4 operators:
-- [identity_operator](https://github.com/tercen/identity_operator)
-- [presence_operator](https://github.com/tercen/minus_operator)
-- [merge_operator](https://github.com/tercen/merge_operator)
+This workflow has 2 operators:
+
+* [identity_operator](https://github.com/tercen/identity_operator)
+* [PTK_QC_presence_operator](https://github.com/tercen/PTK_QC_presence_operator)
 
 This workflow has 2 views:
-- Kinetics colored by presence
-- Presence Map
+
+* Kinetics colored by presence
+* Presence Map
 
 ##### See Also
 
