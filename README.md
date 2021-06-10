@@ -1,8 +1,8 @@
-# PTK_Kinetic_QC_app
+# PTK_QC_app
 
 ##### Description
 
-`PTK_Kinetic_QC_app` is an application that will perform a linear regression on each kinetic curve in the data set and calculate the probability p that there is no trend with cycle number (time).  If this p-value is low it means that there likely is a trend with cycle number.
+`PTK_QC_app` is an application that will perform a linear regression on each kinetic curve in the data set and calculate the probability p that there is no trend with cycle number (time).  If this p-value is low it means that there likely is a trend with cycle number.
 Such a trend can be positive or negative, therefore the app calculates a "presence" value as the -log10(p) times the sign of the slope of the linear regression:
 `presence = -log10(p) * sign(slope)`
 Hence a presence value > +2 indicates a positive trend observed at a significance < 0.01.
@@ -27,4 +27,4 @@ This workflow has 2 views:
 
 ##### See Also
 
-[PTK_Kinetic_QC_app](https://github.com/tercen/PTK_Kinetic_QC_app)
+[PTK_QC_app](https://github.com/tercen/PTK_QC_app)
