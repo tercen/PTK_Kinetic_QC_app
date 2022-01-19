@@ -2,9 +2,9 @@
   "kind": "Workflow",
   "id": "33fb64086c3295748ed979a87b61446d",
   "isDeleted": false,
-  "rev": "51-67a365ad297774233fb2ea4d9716c265",
+  "rev": "114-404622c0fddf807d755051dd1bc6e015",
   "description": "Quality control of Tyrosine PamChip measurements",
-  "name": "PTK QC_generic",
+  "name": "PTK QC_app",
   "createdBy": "Martin",
   "acl": {
     "kind": "Acl",
@@ -17,7 +17,7 @@
   },
   "lastModifiedDate": {
     "kind": "Date",
-    "value": "2021-10-15T08:09:53.234809Z"
+    "value": "2022-01-11T09:40:44.015277Z"
   },
   "urls": [
     {
@@ -80,21 +80,21 @@
     },
     {
       "kind": "Link",
-      "id": "570b8164-d053-4b6f-ab54-9d8f9b3e4b65",
-      "inputId": "e9f79138-5d31-4e72-b640-4826a3817488-i-0",
-      "outputId": "ccd2b0e1-a87b-4635-b38f-adb67a96d2d8-o-0"
-    },
-    {
-      "kind": "Link",
       "id": "69929787-a549-4e05-bd9a-9c124e582f94",
       "inputId": "748f28f9-6c84-42ac-8c38-f4930a3edbc4-i-0",
       "outputId": "c0df390c-1a5e-4cc7-b15c-3e51380a6797-o-0"
     },
     {
       "kind": "Link",
-      "id": "f27057d9-9e29-4987-a076-ba5e316dbb76",
+      "id": "6483dc2c-ba07-4165-971e-a90543734537",
       "inputId": "c0df390c-1a5e-4cc7-b15c-3e51380a6797-i-0",
-      "outputId": "e9f79138-5d31-4e72-b640-4826a3817488-o-0"
+      "outputId": "ce5a9539-4175-4903-b1c7-4176631ed885-o-0"
+    },
+    {
+      "kind": "Link",
+      "id": "bc5fa104-d4f3-4083-bfe3-53e82b5ab7ba",
+      "inputId": "ce5a9539-4175-4903-b1c7-4176631ed885-i-0",
+      "outputId": "ccd2b0e1-a87b-4635-b38f-adb67a96d2d8-o-0"
     }
   ],
   "steps": [
@@ -128,8 +128,8 @@
         },
         "topLeft": {
           "kind": "Point",
-          "x": 679.0392968750002,
-          "y": 280.5
+          "x": 680.0392968750002,
+          "y": 266.5
         }
       },
       "state": {
@@ -278,7 +278,8 @@
               }
             }
           ],
-          "rectangleSelections": []
+          "rectangleSelections": [],
+          "nRows": 10
         },
         "filters": {
           "kind": "Filters",
@@ -291,34 +292,16 @@
               "filterExprs": [
                 {
                   "kind": "FilterExpr",
-                  "filterOp": "greater",
-                  "stringValue": "-1e20",
+                  "filterOp": "less",
+                  "stringValue": "5",
                   "factor": {
                     "kind": "Factor",
-                    "name": "Measurement",
+                    "name": "Series",
                     "type": "double"
                   }
                 }
               ],
-              "name": "Measurement"
-            },
-            {
-              "kind": "NamedFilter",
-              "logical": "and",
-              "not": false,
-              "filterExprs": [
-                {
-                  "kind": "FilterExpr",
-                  "filterOp": "greater",
-                  "stringValue": "0",
-                  "factor": {
-                    "kind": "Factor",
-                    "name": "Measurement2",
-                    "type": "double"
-                  }
-                }
-              ],
-              "name": "Measurement2"
+              "name": "Series"
             }
           ]
         },
@@ -372,13 +355,14 @@
               }
             }
           ],
-          "rectangleSelections": []
+          "rectangleSelections": [],
+          "nRows": 10
         },
         "taskId": ""
       },
       "computedRelation": {
         "kind": "Relation",
-        "id": "58810516-85ff-4493-b235-400af14ce9c7"
+        "id": "cc03f2cc-c3c9-4936-83fa-139b36f33985"
       }
     },
     {
@@ -406,12 +390,12 @@
         "kind": "Rectangle",
         "extent": {
           "kind": "Point",
-          "x": 192.41796875,
+          "x": 186.2636260986328,
           "y": 55.0
         },
         "topLeft": {
           "kind": "Point",
-          "x": 494.0392968750002,
+          "x": 495.0392968750002,
           "y": 408.5
         }
       },
@@ -450,20 +434,25 @@
                   }
                 ],
                 "palette": {
-                  "kind": "JetPalette",
+                  "kind": "RampPalette",
                   "backcolor": 0,
                   "properties": [],
-                  "isUserDefined": false,
+                  "isUserDefined": true,
                   "doubleColorElements": [
                     {
                       "kind": "DoubleColorElement",
-                      "color": -1,
-                      "stringValue": "-0.9346435694017455"
+                      "color": 255,
+                      "stringValue": "-2"
                     },
                     {
                       "kind": "DoubleColorElement",
-                      "color": -1,
-                      "stringValue": "0.9571004041343077"
+                      "color": 16777215,
+                      "stringValue": "0"
+                    },
+                    {
+                      "kind": "DoubleColorElement",
+                      "color": 16027192,
+                      "stringValue": "2"
                     }
                   ]
                 }
@@ -575,7 +564,8 @@
               }
             }
           ],
-          "rectangleSelections": []
+          "rectangleSelections": [],
+          "nRows": 10
         },
         "filters": {
           "kind": "Filters",
@@ -588,34 +578,16 @@
               "filterExprs": [
                 {
                   "kind": "FilterExpr",
-                  "filterOp": "greater",
-                  "stringValue": "-1e32",
+                  "filterOp": "less",
+                  "stringValue": "5",
                   "factor": {
                     "kind": "Factor",
-                    "name": "Measurement",
+                    "name": "Series",
                     "type": "double"
                   }
                 }
               ],
-              "name": "Measurement"
-            },
-            {
-              "kind": "NamedFilter",
-              "logical": "and",
-              "not": false,
-              "filterExprs": [
-                {
-                  "kind": "FilterExpr",
-                  "filterOp": "greater",
-                  "stringValue": "0",
-                  "factor": {
-                    "kind": "Factor",
-                    "name": "Measurement2",
-                    "type": "double"
-                  }
-                }
-              ],
-              "name": "Measurement2"
+              "name": "Series"
             }
           ]
         },
@@ -684,13 +656,14 @@
               }
             }
           ],
-          "rectangleSelections": []
+          "rectangleSelections": [],
+          "nRows": 10
         },
         "taskId": ""
       },
       "computedRelation": {
         "kind": "Relation",
-        "id": "87053e1f-43b2-4c28-92e9-936323d70bd3"
+        "id": "ddc5fd1b-1276-4877-a7f2-b7fb2fcd6a95"
       }
     },
     {
@@ -718,12 +691,12 @@
         "kind": "Rectangle",
         "extent": {
           "kind": "Point",
-          "x": 103.4375,
+          "x": 100.89186096191406,
           "y": 55.0
         },
         "topLeft": {
           "kind": "Point",
-          "x": 767.0392968750002,
+          "x": 769.0392968750002,
           "y": 405.5
         }
       },
@@ -764,22 +737,22 @@
                   "kind": "RampPalette",
                   "backcolor": 0,
                   "properties": [],
-                  "isUserDefined": false,
+                  "isUserDefined": true,
                   "doubleColorElements": [
                     {
                       "kind": "DoubleColorElement",
                       "color": 255,
-                      "stringValue": "-0.9346435694017455"
+                      "stringValue": "-2"
                     },
                     {
                       "kind": "DoubleColorElement",
                       "color": 16777215,
-                      "stringValue": "0.011228417366281107"
+                      "stringValue": "-0.020699608880835774"
                     },
                     {
                       "kind": "DoubleColorElement",
-                      "color": 16711680,
-                      "stringValue": "0.9571004041343077"
+                      "color": 16027192,
+                      "stringValue": "2"
                     }
                   ]
                 }
@@ -866,7 +839,7 @@
         },
         "columnTable": {
           "kind": "CrosstabTable",
-          "cellSize": 108.0,
+          "cellSize": 45.0,
           "offset": 0,
           "graphicalFactors": [
             {
@@ -891,49 +864,13 @@
               }
             }
           ],
-          "rectangleSelections": []
+          "rectangleSelections": [],
+          "nRows": 10
         },
         "filters": {
           "kind": "Filters",
           "removeNaN": true,
-          "namedFilters": [
-            {
-              "kind": "NamedFilter",
-              "logical": "and",
-              "not": false,
-              "filterExprs": [
-                {
-                  "kind": "FilterExpr",
-                  "filterOp": "greater",
-                  "stringValue": "-1e20",
-                  "factor": {
-                    "kind": "Factor",
-                    "name": "Measurement",
-                    "type": "double"
-                  }
-                }
-              ],
-              "name": "Measurement"
-            },
-            {
-              "kind": "NamedFilter",
-              "logical": "and",
-              "not": false,
-              "filterExprs": [
-                {
-                  "kind": "FilterExpr",
-                  "filterOp": "greater",
-                  "stringValue": "0",
-                  "factor": {
-                    "kind": "Factor",
-                    "name": "Measurement2",
-                    "type": "double"
-                  }
-                }
-              ],
-              "name": "Measurement2"
-            }
-          ]
+          "namedFilters": []
         },
         "operatorSettings": {
           "kind": "OperatorSettings",
@@ -954,7 +891,7 @@
         },
         "rowTable": {
           "kind": "CrosstabTable",
-          "cellSize": 61.06578947368416,
+          "cellSize": 41.31578947368416,
           "offset": 0,
           "graphicalFactors": [
             {
@@ -1000,13 +937,14 @@
               }
             }
           ],
-          "rectangleSelections": []
+          "rectangleSelections": [],
+          "nRows": 10
         },
         "taskId": ""
       },
       "computedRelation": {
         "kind": "Relation",
-        "id": "92890954-098b-4374-b73e-b5cdb21eb5c2"
+        "id": "6f88e37a-c227-48b3-b835-ec20738e583d"
       }
     },
     {
@@ -1080,126 +1018,6 @@
       }
     },
     {
-      "kind": "WizardStep",
-      "id": "e9f79138-5d31-4e72-b640-4826a3817488",
-      "groupId": "",
-      "name": "PTK QC Wizard",
-      "inputs": [
-        {
-          "kind": "InputPort",
-          "id": "e9f79138-5d31-4e72-b640-4826a3817488-i-0",
-          "linkType": "relation",
-          "name": "table"
-        }
-      ],
-      "outputs": [
-        {
-          "kind": "OutputPort",
-          "id": "e9f79138-5d31-4e72-b640-4826a3817488-o-0",
-          "linkType": "relation",
-          "name": "table"
-        }
-      ],
-      "rectangle": {
-        "kind": "Rectangle",
-        "extent": {
-          "kind": "Point",
-          "x": 108.81640625,
-          "y": 55.0
-        },
-        "topLeft": {
-          "kind": "Point",
-          "x": 666.5050000000001,
-          "y": 52.5
-        }
-      },
-      "state": {
-        "kind": "StepState",
-        "taskId": "",
-        "taskState": {
-          "kind": "InitState"
-        }
-      },
-      "model": {
-        "kind": "WizardStepModel",
-        "namespace": "PTK-QC",
-        "description": "",
-        "factors": [
-          {
-            "kind": "MappingFactor",
-            "name": "Measurement",
-            "type": "double",
-            "isSingle": true,
-            "description": "",
-            "factorName": "Measurement",
-            "factors": [],
-            "isRequired": true
-          },
-          {
-            "kind": "MappingFactor",
-            "name": "Series",
-            "type": "double",
-            "isSingle": true,
-            "description": "",
-            "factorName": "Series",
-            "factors": [],
-            "isRequired": true
-          },
-          {
-            "kind": "MappingFactor",
-            "name": "Variable",
-            "type": "string",
-            "isSingle": false,
-            "description": "",
-            "factorName": "Variable",
-            "factors": [],
-            "isRequired": true
-          },
-          {
-            "kind": "MappingFactor",
-            "name": "Group",
-            "type": "string",
-            "isSingle": false,
-            "description": "",
-            "factorName": "Group",
-            "factors": [],
-            "isRequired": true
-          }
-        ],
-        "filters": [
-          {
-            "kind": "MappingFilter",
-            "name": "Measurement",
-            "description": "",
-            "namedFilter": {
-              "kind": "NamedFilter",
-              "logical": "and",
-              "not": false,
-              "filterExprs": [],
-              "name": "Measurement"
-            },
-            "isRequired": false
-          },
-          {
-            "kind": "MappingFilter",
-            "name": "Measurement2",
-            "description": "",
-            "namedFilter": {
-              "kind": "NamedFilter",
-              "logical": "and",
-              "not": false,
-              "filterExprs": [],
-              "name": "Measurement2"
-            },
-            "isRequired": false
-          }
-        ],
-        "steps": [],
-        "defaultFactors": [],
-        "defaultFilters": []
-      }
-    },
-    {
       "kind": "OutStep",
       "id": "33b28c01-8a68-4f26-b227-051ae39ee324",
       "groupId": "",
@@ -1230,7 +1048,7 @@
         "topLeft": {
           "kind": "Point",
           "x": 898.0392968750002,
-          "y": 278.5
+          "y": 292.5
         }
       },
       "state": {
@@ -1276,8 +1094,8 @@
         },
         "topLeft": {
           "kind": "Point",
-          "x": 676.5050000000001,
-          "y": -57.5
+          "x": 685.5050000000001,
+          "y": -8.5
         }
       },
       "state": {
@@ -1318,13 +1136,13 @@
         "kind": "Rectangle",
         "extent": {
           "kind": "Point",
-          "x": 115.96484375,
+          "x": 112.77784729003906,
           "y": 55.0
         },
         "topLeft": {
           "kind": "Point",
-          "x": 664.9523828125002,
-          "y": 169.5
+          "x": 673.9523828125002,
+          "y": 173.5
         }
       },
       "state": {
@@ -1494,7 +1312,8 @@
               }
             }
           ],
-          "rectangleSelections": []
+          "rectangleSelections": [],
+          "nRows": 0
         },
         "filters": {
           "kind": "Filters",
@@ -1545,19 +1364,253 @@
               }
             }
           ],
-          "rectangleSelections": []
+          "rectangleSelections": [],
+          "nRows": 0
         },
         "taskId": ""
       },
       "computedRelation": {
         "kind": "Relation",
-        "id": "79e86f59-ecad-437f-bbdd-1381391d4c66"
+        "id": "f29433e8-122f-4249-9a7a-92651edd7e99"
+      }
+    },
+    {
+      "kind": "WizardStep",
+      "id": "ce5a9539-4175-4903-b1c7-4176631ed885",
+      "groupId": "",
+      "name": "PTK QC",
+      "inputs": [
+        {
+          "kind": "InputPort",
+          "id": "ce5a9539-4175-4903-b1c7-4176631ed885-i-0",
+          "linkType": "relation",
+          "name": "table"
+        }
+      ],
+      "outputs": [
+        {
+          "kind": "OutputPort",
+          "id": "ce5a9539-4175-4903-b1c7-4176631ed885-o-0",
+          "linkType": "relation",
+          "name": "table"
+        }
+      ],
+      "rectangle": {
+        "kind": "Rectangle",
+        "extent": {
+          "kind": "Point",
+          "x": 88.99000000000001,
+          "y": 55.0
+        },
+        "topLeft": {
+          "kind": "Point",
+          "x": 686.4338510131838,
+          "y": 85.5
+        }
+      },
+      "state": {
+        "kind": "StepState",
+        "taskId": "",
+        "taskState": {
+          "kind": "InitState"
+        }
+      },
+      "model": {
+        "kind": "WizardStepModel",
+        "namespace": "PTK QC",
+        "description": "",
+        "appDesignType": "ptkqc.c06_groups_series_measurement2",
+        "factors": [
+          {
+            "kind": "MappingFactor",
+            "name": "Measurement",
+            "type": "double",
+            "isSingle": true,
+            "description": "",
+            "factorName": "Measurement",
+            "factors": [
+              {
+                "kind": "Factor",
+                "name": "Measurement",
+                "type": "double"
+              }
+            ],
+            "isRequired": true
+          },
+          {
+            "kind": "MappingFactor",
+            "name": "Series",
+            "type": "double",
+            "isSingle": true,
+            "description": "",
+            "factorName": "Series",
+            "factors": [
+              {
+                "kind": "Factor",
+                "name": "Series",
+                "type": "double"
+              }
+            ],
+            "isRequired": true
+          },
+          {
+            "kind": "MappingFactor",
+            "name": "Variable",
+            "type": "string",
+            "isSingle": false,
+            "description": "",
+            "factorName": "Variable",
+            "factors": [
+              {
+                "kind": "Factor",
+                "name": "Variable",
+                "type": "string"
+              }
+            ],
+            "isRequired": true
+          },
+          {
+            "kind": "MappingFactor",
+            "name": "Group",
+            "type": "string",
+            "isSingle": false,
+            "description": "",
+            "factorName": "Group",
+            "factors": [
+              {
+                "kind": "Factor",
+                "name": "Group",
+                "type": "string"
+              }
+            ],
+            "isRequired": true
+          }
+        ],
+        "filters": [
+          {
+            "kind": "MappingFilter",
+            "name": "Series",
+            "description": "",
+            "namedFilter": {
+              "kind": "NamedFilter",
+              "logical": "and",
+              "not": false,
+              "filterExprs": [
+                {
+                  "kind": "FilterExpr",
+                  "filterOp": "less",
+                  "stringValue": "5",
+                  "factor": {
+                    "kind": "Factor",
+                    "name": "Series",
+                    "type": "double"
+                  }
+                }
+              ],
+              "name": "Series"
+            },
+            "isRequired": false
+          }
+        ],
+        "steps": [],
+        "defaultFactors": [
+          {
+            "kind": "MappingFactor",
+            "name": "Measurement",
+            "type": "double",
+            "isSingle": true,
+            "description": "",
+            "factorName": "Measurement",
+            "factors": [
+              {
+                "kind": "Factor",
+                "name": "Measurement",
+                "type": "double"
+              }
+            ],
+            "isRequired": true
+          },
+          {
+            "kind": "MappingFactor",
+            "name": "Series",
+            "type": "double",
+            "isSingle": true,
+            "description": "",
+            "factorName": "Series",
+            "factors": [
+              {
+                "kind": "Factor",
+                "name": "Series",
+                "type": "double"
+              }
+            ],
+            "isRequired": true
+          },
+          {
+            "kind": "MappingFactor",
+            "name": "Variable",
+            "type": "string",
+            "isSingle": false,
+            "description": "",
+            "factorName": "Variable",
+            "factors": [
+              {
+                "kind": "Factor",
+                "name": "Variable",
+                "type": "string"
+              }
+            ],
+            "isRequired": true
+          },
+          {
+            "kind": "MappingFactor",
+            "name": "Group",
+            "type": "string",
+            "isSingle": false,
+            "description": "",
+            "factorName": "Group",
+            "factors": [
+              {
+                "kind": "Factor",
+                "name": "Group",
+                "type": "string"
+              }
+            ],
+            "isRequired": true
+          }
+        ],
+        "defaultFilters": [
+          {
+            "kind": "MappingFilter",
+            "name": "Series",
+            "description": "",
+            "namedFilter": {
+              "kind": "NamedFilter",
+              "logical": "and",
+              "not": false,
+              "filterExprs": [
+                {
+                  "kind": "FilterExpr",
+                  "filterOp": "less",
+                  "stringValue": "5",
+                  "factor": {
+                    "kind": "Factor",
+                    "name": "Series",
+                    "type": "double"
+                  }
+                }
+              ],
+              "name": "Series"
+            },
+            "isRequired": false
+          }
+        ]
       }
     }
   ],
   "offset": {
     "kind": "Point",
-    "x": 67.0,
-    "y": 132.0
+    "x": -250.0,
+    "y": 174.0
   }
 }
