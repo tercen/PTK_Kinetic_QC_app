@@ -28,4 +28,4 @@ This workflow has 2 views:
 
 ##### See Also
 
-[PTK_QC_app](https://github.com/tercen/PTK_QC_app)
+[QC_STK_app](https://github.com/tercen/QC_STK_app)
