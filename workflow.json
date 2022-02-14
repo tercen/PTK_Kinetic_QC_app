@@ -1,11 +1,11 @@
 {
   "kind": "Workflow",
-  "id": "33fb64086c3295748ed979a87b61446d",
+  "id": "c845ceade32c4423bc616ff5ab48129c",
   "isDeleted": false,
-  "rev": "114-404622c0fddf807d755051dd1bc6e015",
+  "rev": "4-27719582232d95607182444d1a1875c2",
   "description": "Quality control of Tyrosine PamChip measurements",
   "name": "QC_PTK_app",
-  "createdBy": "Martin",
+  "createdBy": "ginberg",
   "acl": {
     "kind": "Acl",
     "owner": "pamgene",
@@ -13,11 +13,11 @@
   },
   "createdDate": {
     "kind": "Date",
-    "value": "2021-09-21T13:07:31.568734Z"
+    "value": "2022-02-03T09:04:42.742183Z"
   },
   "lastModifiedDate": {
     "kind": "Date",
-    "value": "2022-01-11T09:40:44.015277Z"
+    "value": "2022-02-03T09:04:45.046210Z"
   },
   "urls": [
     {
@@ -42,10 +42,10 @@
     "kind": "Url",
     "uri": "https://github.com/tercen/QC_PTK_app"
   },
-  "version": "0.0.1",
+  "version": "0.0.3",
   "authors": [],
   "isPublic": false,
-  "projectId": "33fb64086c3295748ed979a87b34b3b7",
+  "projectId": "c845ceade32c4423bc616ff5ab22f158",
   "folderId": "",
   "links": [
     {
@@ -312,7 +312,7 @@
             "kind": "OperatorRef",
             "name": "PTK QC",
             "version": "0.0.1",
-            "operatorId": "32686b39f178f64eef1bbd384482feec",
+            "operatorId": "c845ceade32c4423bc616ff5ab18c1b5",
             "operatorKind": "ROperator",
             "propertyValues": [
               {
@@ -1327,7 +1327,7 @@
             "kind": "OperatorRef",
             "name": "Identity",
             "version": "0.0.1",
-            "operatorId": "9b71acd01fc31cc0c265a1190af0d55f",
+            "operatorId": "c845ceade32c4423bc616ff5ab1876f9",
             "operatorKind": "ROperator",
             "propertyValues": [],
             "url": {
@@ -1417,8 +1417,8 @@
       },
       "model": {
         "kind": "WizardStepModel",
-        "namespace": "PTK QC",
-        "description": "",
+        "namespace": "PTKQC",
+        "description": "Quality control of Tyrosine PamChip measurements.",
         "appDesignType": "ptkqc.c06_groups_series_measurement2",
         "factors": [
           {
